@@ -1,0 +1,13 @@
+########################
+# STARTUP APPLICATIONS #
+########################
+
+exec_always --no-startup-id			xset -dpms &
+exec_always --no-startup-id			xset s off &
+exec_always --no-startup-id			~/Scripts/WM-Battery-Notifier.sh
+
+exec --no-startup-id 				dex --autostart --environment i3 &
+exec --no-startup-id 				xss-lock --transfer-sleep-lock -- i3lock --nofork &
+exec --no-startup-id				/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+exec						polybar -c ~/.config/polybar/config.ini &
