@@ -1,0 +1,36 @@
+##############
+## SETTINGS ##
+##############
+set $mod1				        Mod4
+set $mod2				        Mod1
+set $bs					        bindsym
+
+## LEGEND ##
+# Mod1 = Alt
+# Mod4 = Meta
+
+$bs $mod1+Shift+c	        		reload
+$bs $mod1+Shift+r				restart
+$bs $mod1+Shift+q				kill
+
+
+
+
+# Include Files
+
+include ~/.config/i3/Workspaces
+
+include ~/.config/i3/W-Settings
+include ~/.config/i3/W-Assignments
+
+include ~/.config/i3/Keybinds
+
+include ~/.config/i3/StartupApps
+
+
+
+
+# In case polybar fails, uncomment these:
+#bar {
+#	status_command i3status
+#}
