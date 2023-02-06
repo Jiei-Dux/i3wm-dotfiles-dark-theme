@@ -1,0 +1,40 @@
+###############
+# ASSIGNMENTS #
+###############
+
+for_window [class="^firefox*"]			move to workspace $ws1
+
+for_window [instance="Terminal"]		move to workspace $ws2
+
+for_window [instance="NVim"]			move to workspace $ws3
+
+for_window [class="^steam_app_*"]		move to workspace $ws4
+
+for_window [class="^Steam*"]			move to workspace $ws5
+
+for_window [instance="Music"]			move to workspace $ws6
+
+for_window [class="^krita*"]			move to workspace $ws7
+
+for_window [class="^kdenlive*"]			move to workspace $ws8
+
+for_window [class="^Gimp-*"]			move to workspace $ws9
+
+for_window [class="^Audacity*"]			move to workspace $ws10
+
+
+for_window [class="^LibreWolf*"]		move to workspace $ws11
+
+for_window [class="^Apache NetBeans IDE*"]	move to workspace $ws12
+
+for_window [class="^Minecraft*"]		move to workspace $ws14
+
+for_window [class="^PrismLauncher*"]		move to workspace $ws15
+
+for_window [class="^Thunar*"]			move to workspace $ws17
+
+for_window [class="^Microsoft Teams*"]		move to workspace $ws18
+
+for_window [class="^libreoffice*"]		move to workspace $ws19
+
+for_window [class="^obs*"]			move to workspace $ws20
