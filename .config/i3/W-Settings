@@ -1,0 +1,20 @@
+###################
+# WINDOW SETTINGS #
+###################
+
+for_window [class="^.*"]                        border pixel 0
+
+for_window [instance="Toolkit"]			sticky enable
+for_window [instance="Places"]			floating enable, move position center
+
+for_window [title="Friends List"]               floating enable
+for_window [title="Steam - News"]               floating enable
+
+for_window [class="Pavucontrol"]                floating enable, resize set 1080 500, move position center
+for_window [title="File Upload"]                resize set 800 500, move position center
+
+for_window [class="^steam_app_*"]		floating disable #Steam Games
+
+for_window [class="^huiontablet*"]		floating enable
+
+for_window [class="^Vimiv*"]			floating enable, move position center
