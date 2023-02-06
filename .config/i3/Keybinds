@@ -1,0 +1,159 @@
+############
+# KEYBINDS #
+############
+
+# settings
+floating_modifier 			$mod1
+
+
+
+
+# applications
+$bs $mod1+Return                        exec --no-startup-id kitty --name Terminal
+$bs $mod2+Return			exec --no-startup-id kitty --name NVim
+
+$bs $mod1+d				exec --no-startup-id dmenu_run
+
+$bs Print 				exec flameshot full
+$bs Shift+Print 			exec flameshot gui
+
+$bs $mod1+Shift+f			exec firefox
+
+$bs $mod1+Shift+e			exec Thunar
+
+
+
+
+# fullscreen / floating toggle
+$bs $mod1+Shift+space           	floating toggle
+$bs $mod1+f                     	fullscreen toggle
+
+
+
+
+# change window focus
+$bs $mod1+Left         			focus left
+$bs $mod1+Down               		focus down
+$bs $mod1+Up                 		focus up
+$bs $mod1+Right             		focus right
+
+
+
+
+# move focused window
+$bs $mod1+Shift+Left            	move left
+$bs $mod1+Shift+Down            	move down
+$bs $mod1+Shift+Up              	move up
+$bs $mod1+Shift+Right           	move right
+
+
+
+
+# session managing
+$bs $mod1+Shift+End			exec ~/Scripts/powermenu.sh
+$bs $mod1+Delete			exec --no-startup-id i3lock
+
+
+
+
+# volume
+$bs XF86AudioRaiseVolume 		exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+$bs XF86AudioLowerVolume 		exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+
+$bs XF86AudioMute 	        	exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+$bs XF86AudioMicMute 			exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+
+
+
+# workspace switching
+$bs $mod1+1 				workspace $ws1
+$bs $mod1+2 				workspace $ws2
+$bs $mod1+3 				workspace $ws3
+$bs $mod1+4 				workspace $ws4
+$bs $mod1+5 				workspace $ws5
+$bs $mod1+6 				workspace $ws6
+$bs $mod1+7				workspace $ws7
+$bs $mod1+8				workspace $ws8
+$bs $mod1+9 				workspace $ws9
+$bs $mod1+0				workspace $ws10
+
+$bs $mod2+1				workspace $ws11
+$bs $mod2+2				workspace $ws12
+$bs $mod2+3				workspace $ws13
+$bs $mod2+4				workspace $ws14
+$bs $mod2+5				workspace $ws15
+$bs $mod2+6				workspace $ws16
+$bs $mod2+7				workspace $ws17
+$bs $mod2+8				workspace $ws18
+$bs $mod2+9				workspace $ws19
+$bs $mod2+0				workspace $ws20
+
+$bs $mod1+Tab				workspace next
+$bs $mod2+Tab				workspace prev
+
+
+
+
+# move focused container to x workspace
+$bs $mod1+Shift+1 			move container to workspace $ws1
+$bs $mod1+Shift+2 			move container to workspace $ws2
+$bs $mod1+Shift+3 			move container to workspace $ws3
+$bs $mod1+Shift+4			move container to workspace $ws4
+$bs $mod1+Shift+5			move container to workspace $ws5
+$bs $mod1+Shift+6 			move container to workspace $ws6
+$bs $mod1+Shift+7 			move container to workspace $ws7
+$bs $mod1+Shift+8 			move container to workspace $ws8
+$bs $mod1+Shift+9 			move container to workspace $ws9
+$bs $mod1+Shift+0			move container to workspace $ws10
+
+$bs $mod2+Shift+1 			move container to workspace $ws11
+$bs $mod2+Shift+2 			move container to workspace $ws12
+$bs $mod2+Shift+3 			move container to workspace $ws13
+$bs $mod2+Shift+4			move container to workspace $ws14
+$bs $mod2+Shift+5			move container to workspace $ws15
+$bs $mod2+Shift+6 			move container to workspace $ws16
+$bs $mod2+Shift+7 			move container to workspace $ws17
+$bs $mod2+Shift+8 			move container to workspace $ws18
+$bs $mod2+Shift+9 			move container to workspace $ws19
+$bs $mod2+Shift+0			move container to workspace $ws20
+
+
+
+
+# monitor
+$bs $mod1+F1 				exec xrandr --output HDMI-1 --off | exec ~/.config/polybar/launch.sh
+$bs $mod1+F2 				exec xrandr --output HDMI-1 --mode 1366x768 --below eDP-1 | exec ~/.config/polybar/launch.sh
+$bs $mod1+F3				exec xrandr --output HDMI-1 --mode 1366x768 --right-of eDP-1 | exec ~/.config/polybar/launch.sh
+$bs $mod1+F4				exec xrandr --output HDMI-1 --mode 1366x768 --left-of eDP-1 | exec ~/.config/polybar/launch.sh
+
+$bs $mod1+Ctrl+greater 			move workspace to output HDMI-1
+$bs $mod1+Ctrl+less 			move workspace to output eDP-1
+
+
+
+
+# polybar
+$bs $mod1+Shift+F1			exec ~/.config/polybar/launch.sh
+
+
+
+
+# resizing
+mode "resize" {
+        $bs j           resize shrink width 10 px or 10 ppt
+        $bs k           resize grow height 10 px or 10 ppt
+        $bs l           resize shrink height 10 px or 10 ppt
+        $bs semicolon   resize grow width 10 px or 10 ppt
+
+        $bs Left        resize shrink width 10 px or 10 ppt
+        $bs Down        resize grow height 10 px or 10 ppt
+        $bs Up          resize shrink height 10 px or 10 ppt
+        $bs Right       resize grow width 10 px or 10 ppt
+
+        $bs Return      mode "default"
+        $bs Escape      mode "default"
+        $bs $mod1+r  	mode "default"
+}
+
+$bs $mod1+r          	mode "resize"
